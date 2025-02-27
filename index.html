@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gallery.com</title>
+    <meta name="author" content="WdataW" />
+    <meta name="description" content="A decent gallery for your images." />
+    <meta name="charset" content="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/logos/gallery.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="nav-bar" id="nav-bar">
+        <div class="logo">
+          <img
+            src="images/logos/gallery.png"
+            alt="a couple of stacked images representing our website's logo"
+          />
+        </div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Gallery</a></li>
+            <li><a href="">Friends</a></li>
+            <li><a href="">Support</a></li>
+          </ul>
+        </nav>
+        <div class="theme">
+          <!-- this button is modified in the css to hold the current theme icon -->
+          <button></button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- main sections hold 3 main sections large-image, mini-images, filters-->
+      <div class="large-image" id="large-image">
+        <img src="images/pictures/handsome-uncle.jpg" alt="" />
+      </div>
+      <div class="filters-section">
+        <p>FILTERS</p>
+        <div class="filters-container">
+          <div class="filter"><button class="original">Original</button></div>
+          <div class="filter"><button class="dark">Dark</button></div>
+          <div class="filter"><button class="hot">Hot</button></div>
+          <div class="filter"><button class="cold">Old</button></div>
+        </div>
+      </div>
+      <div class="mini-images">
+        <!-- this section is supposed to display all the images in small containers. 
+              when an image is pressed it will be displayed in the large-image section-->
+        <ul class="images-container">
+          <li class="image">
+            <a href="#nav-bar"
+              ><img
+                src="images/pictures/handsome-uncle.jpg"
+                alt="handsome-uncle"
+            /></a>
+          </li>
+          <li class="image">
+            <a href="#nav-bar"
+              ><img
+                src="images/pictures/apartment-building.jpg"
+                alt="arabian-house"
+            /></a>
+          </li>
+          <li class="image">
+            <a href="#nav-bar"
+              ><img src="images/pictures/scary-cat.jpg" alt="scary-cat"
+            /></a>
+          </li>
+          <li class="image">
+            <a href="#nav-bar"
+              ><img src="images/pictures/handsome-man.jpg" alt="handsome-man"
+            /></a>
+          </li>
+          <li class="image">
+            <a href="#nav-bar"
+              ><img src="images/pictures/sheep.jpg" alt="two sheep"
+            /></a>
+          </li>
+          <li class="image">
+            <a href="#nav-bar"
+              ><img src="images/pictures/door.jpg" alt="a door"
+            /></a>
+          </li>
+          <li class="image">
+            <a href="#nav-bar"
+              ><img src="images/pictures/stones.jpg" alt="small stones"
+            /></a>
+          </li>
+          <li class="image">
+            <a href="#nav-bar"
+              ><img src="images/pictures/arabian-house.jpg" alt="arabian-house"
+            /></a>
+          </li>
+          <li class="image">
+            <a href="#nav-bar"
+              ><img src="images/pictures/fish.jpg" alt="handsome-uncle"
+            /></a>
+          </li>
+          <li class="image">
+            <a href="#nav-bar"
+              ><img src="images/pictures/lake.jpg" alt="scary-cat"
+            /></a>
+          </li>
+          <li class="image">
+            <a href="#nav-bar"
+              ><img src="images/pictures/goat.jpg" alt="handsome-man"
+            /></a>
+          </li>
+        </ul>
+      </div>
+    </main>
+
+    <footer>
+      <div class="company">
+        <ul>
+          <li><h3>Company</h3></li>
+          <li><a href="">About Us</a></li>
+          <li><a href="">Careers</a></li>
+          <li><a href="">Press</a></li>
+        </ul>
+      </div>
+      <div class="resources">
+        <ul>
+          <li><h3>Resources</h3></li>
+          <li><a href="">Blog</a></li>
+          <li><a href="">Guides</a></li>
+          <li><a href="">Community</a></li>
+        </ul>
+      </div>
+      <div class="support">
+        <ul>
+          <li><h3>Support</h3></li>
+          <li><a href="">Report A Problem</a></li>
+          <li><a href="">Help Center</a></li>
+          <li><a href="">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="legal">
+        <ul>
+          <li><h3>Legal</h3></li>
+          <li><a href="">Terms Of Service</a></li>
+          <li><a href="">Privacy Policy</a></li>
+          <li><a href="">Cookies</a></li>
+        </ul>
+      </div>
+
+      <div class="author-identity">
+        <p><span>W</span>data<span>W</span></p>
+        <div class="github">
+          <a href="https://github.com/WDataW" target="_blank">
+            <img src="images/logos/github.png" alt="github logo" />
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
