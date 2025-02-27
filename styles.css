@@ -1,0 +1,418 @@
+:root {
+  /* declaring some color variables to be able to manipulate colors more easily later*/
+  --primary-bgcolor: #1b1d1c;
+  --mini-images-bgcolor: #232828;
+  --filters-bgcolor: #3d3d3d;
+  --borders-color: rgb(46, 46, 46);
+  --theme-button-color: #ffffff2b;
+  --theme-color: rgb(155, 220, 255);
+}
+
+html,
+body {
+  scrollbar-width: thin;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font: 16px/1.5 sans-serif;
+  background-color: var(--primary-bgcolor);
+}
+
+/*### header section ###*/
+.nav-bar {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  height: 3rem;
+  width: 100%;
+  background-color: var(--primary-bgcolor);
+}
+.logo {
+  height: 50%;
+  width: auto;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+.logo img {
+  max-height: 100%;
+}
+.main-nav {
+  overflow-x: scroll;
+  scrollbar-width: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+ul {
+  max-width: 100%;
+  list-style: none;
+  display: flex;
+  flex-flow: row;
+
+  margin: 0;
+
+  padding: 0;
+}
+ul li {
+  flex-shrink: 0;
+  margin: 0 0.5rem 0 0.5rem;
+}
+.main-nav li:last-child {
+  padding-right: 1rem;
+}
+a {
+  text-wrap: nowrap;
+}
+a:link,
+a:visited,
+a:active {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.theme {
+  height: 80%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 14px 0 6px;
+}
+.theme button {
+  background-color: transparent;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 30px;
+  vertical-align: top;
+  background: url(images/icons/night-mode.png) center/24px 24px no-repeat;
+  background-color: var(--theme-button-color);
+}
+
+/*### main section ###*/
+main {
+  background-color: var(--primary-bgcolor);
+}
+
+/* large image section  */
+.large-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #000000;
+  border-top: 3px solid var(--borders-color);
+  border-bottom: 3px solid var(--borders-color);
+}
+
+.large-image img {
+  min-width: 100%;
+  display: block;
+}
+
+/* filters section */
+.filters-section {
+  text-align: center;
+  color: white;
+  font-family: monospace;
+  font-weight: bold;
+}
+.filters-section p {
+  padding: 5px 0 5px 0;
+  border-bottom: 1px solid var(--borders-color);
+  margin: 0;
+}
+.filters-container {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding-bottom: 5px;
+  border-bottom: 3px solid var(--borders-color);
+}
+
+.filter {
+  flex: 1;
+  border-right: 1px solid var(--borders-color);
+}
+.filter button {
+  text-wrap: nowrap;
+  margin: 0;
+  padding: 10px 5px;
+  border: none;
+  background-color: var(--filters-bgcolor);
+  color: white;
+  font-family: monospace;
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+}
+
+/* mini images section  */
+.mini-images {
+  padding: 2px 0;
+
+  border-top: 3px solid var(--borders-color);
+  border-bottom: 3px solid var(--borders-color);
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: var(--mini-images-bgcolor);
+}
+
+.mini-images ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.image {
+  margin: 0;
+  aspect-ratio: 134/100;
+  overflow: hidden;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 500px) {
+  .logo {
+    /* enlarge logo for bigger screens */
+    height: 70%;
+    width: auto;
+  }
+  /* here we are adding the word "Thene" because there is enough space now in bigger screens*/
+  .theme {
+    color: var(--theme-color);
+  }
+  .theme::before {
+    content: "Theme";
+    margin-right: 3px;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-shadow: 0 1px 0 black;
+  }
+
+  .mini-images ul {
+    /* allow for more columns */
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .filter:not(:first-child) {
+    border-top: 1px solid var(--borders-color);
+  }
+}
+@media screen and (min-width: 700px) {
+  .main-nav {
+    font-size: 16px;
+  }
+  .theme button {
+    /* before we highlighted its background to make it look more like a button for phone users */
+    background-color: transparent;
+  }
+  .theme button:hover {
+    background-color: var(--theme-button-color);
+  }
+  main {
+    display: grid;
+    grid-template-columns: 205px 1fr;
+    grid-template-rows: 1fr 79px;
+  }
+  .large-image {
+    height: 610px;
+    max-height: 90vh;
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+  .large-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .mini-images {
+    overflow-y: scroll;
+    scrollbar-width: none;
+    height: 610px;
+    max-height: 90vh;
+    padding: 0;
+    padding-right: 2px;
+    padding-left: 2px;
+    max-width: 200px;
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .mini-images ul {
+    padding: 2px 0;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 74px;
+    width: 100%;
+  }
+  .mini-images li {
+    height: 74px;
+  }
+  .filters-section {
+    grid-column: 1/3;
+  }
+}
+@media screen and (min-width: 1000px) {
+  /* now we changed the layout in main so we have 3 columns mini-images, large-image, filters */
+  main {
+    grid-template-columns: 205px 1fr 152px;
+    grid-template-rows: 1fr;
+  }
+  .filters-section {
+    grid-column: 3/4;
+    grid-row: 1/2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 1fr;
+    align-items: center;
+    border-top: 3px solid var(--borders-color);
+    border-bottom: 3px solid var(--borders-color);
+    border-left: solid 2px var(--borders-color);
+  }
+  .filters-container {
+    border: none;
+    border-top: 3px solid var(--borders-color);
+
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    padding-bottom: 3px;
+  }
+  .filter {
+    width: 100%;
+    border-right: none;
+  }
+  .filters-section p {
+    align-self: center;
+    border: none;
+    padding: 0;
+  }
+}
+
+/*### footer section ###*/
+footer {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 25px 140px 140px 25px 100px;
+  background-color: var(--primary-bgcolor);
+}
+
+.company {
+  width: 150px;
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+.resources {
+  width: 150px;
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+.support {
+  width: 150px;
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+.legal {
+  width: 150px;
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+footer ul {
+  text-shadow: 0 1px black;
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 0;
+  padding: 0;
+}
+ul h3 {
+  margin: 0;
+  color: var(--theme-color);
+  text-shadow: 0 1px black;
+}
+.author-identity {
+  width: 100%;
+  justify-self: start;
+  grid-column: 1/3;
+  grid-row: 5/6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.author-identity p {
+  margin: 0;
+  margin-left: 30px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 1px black;
+  letter-spacing: 0;
+}
+/* to make the first and last letters of WdataW uniquely designed */
+.author-identity p span {
+  color: var(--theme-color);
+  font-size: 50px;
+}
+/* this represents the div holding the github link to the authors github profile */
+.github {
+  margin-right: 30px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+/* to represent the img as a circle */
+.github img {
+  max-width: 100%;
+  height: auto;
+  transform: scale(1.5);
+}
+@media screen and (min-width: 700px) {
+  /* to make the footer sections now display all in one row because we have extra space */
+  footer {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 25px 140px 25px 100px;
+  }
+
+  /* re-arranging the sections based on the new grid layout */
+  .company {
+    width: 150px;
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .resources {
+    width: 150px;
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+  .support {
+    width: 150px;
+    grid-column: 3/4;
+    grid-row: 2/3;
+  }
+
+  .legal {
+    width: 150px;
+    grid-column: 4/5;
+    grid-row: 2/3;
+  }
+  .author-identity {
+    grid-column: 1/5;
+    grid-row: 4/5;
+  }
+}
