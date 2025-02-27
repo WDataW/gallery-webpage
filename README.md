@@ -6,6 +6,7 @@ This concept is inspired of [MDN tutorials](https://developer.mozilla.org/en-US/
 Icons have been downloaded from [FLATICON](https://www.flaticon.com/).  
 ![Screenshot](preview.png)
 
+
 [Live Demo](https://wdataw.github.io/gallery-webpage/)
 
 ## Features:
