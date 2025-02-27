@@ -1,7 +1,7 @@
 # gallery-webpage
 A gallery that allows you to browse, enlarge, apply filters to images(NOTE: this isn't a complete app, it is just a preview page of the concept).
 
-This concept is inspired of [MDN tutorials](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Image_gallery).
+This concept is inspired from [MDN tutorials](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Image_gallery).
 
 Icons have been downloaded from [FLATICON](https://www.flaticon.com/).  
 
